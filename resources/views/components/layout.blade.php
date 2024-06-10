@@ -20,7 +20,7 @@
     <h1>Laravel Test</h1>
     <nav>
         <a href="{{route('home')}}">Home</a>
-{{--        <a href="{{route('new')}}">New</a>--}}
+        <a href="{{action([\App\Http\Controllers\ArticleController::class, 'create'])}}">New</a>
     </nav>
 </header>
 
