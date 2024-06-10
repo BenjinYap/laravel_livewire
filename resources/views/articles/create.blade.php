@@ -1,5 +1,5 @@
 <x-layout>
-    da form
+    <h1>New Article</h1>
 
     <form method="POST" action="{{ route('articles.store') }}">
             @csrf

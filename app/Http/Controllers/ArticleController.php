@@ -35,7 +35,7 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-           'title' => 'required',
+           'title' => 'required|min:5',
         ]);
 
         $article = new Article($validated);
@@ -49,7 +49,9 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        return view('articles.show', [
+            'article' => $article,
+        ]);
     }
 
     /**
