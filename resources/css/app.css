@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    #editorjs h1 {
+        @apply text-3xl;
+    }
+
+    #editorjs h2 {
+        @apply text-2xl;
+    }
+
+    #editorjs h3 {
+        @apply text-xl;
+    }
+
+    #editorjs h4 {
+        @apply text-lg
+    }
+}

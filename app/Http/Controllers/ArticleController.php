@@ -37,7 +37,8 @@ class ArticleController extends Controller
     public function store(Request $request):RedirectResponse
     {
         $validated = $request->validate([
-           'title' => 'required|min:5',
+            'title' => 'required',
+            'content' => 'required',
         ]);
 
         $article = new Article($validated);

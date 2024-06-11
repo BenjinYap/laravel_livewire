@@ -18,6 +18,6 @@
     </section>
 
     <section>
-        hello
+        {{$article->content}}
     </section>
 </x-layout>
