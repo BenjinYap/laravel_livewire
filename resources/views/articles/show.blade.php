@@ -18,6 +18,6 @@
     </section>
 
     <section>
-        {{$article->content}}
+        <x-article.content :content="$article->content"/>
     </section>
 </x-layout>

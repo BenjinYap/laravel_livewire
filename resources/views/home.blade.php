@@ -14,8 +14,8 @@
         <div>
             @foreach($articles as $article)
                 <div class="[&:not(:last-child)]:border-b py-1">
-                    <h2 class="text-lg hover:text-blue-300">
-                        <a href="{{action([ArticleController::class, 'show'], ['article' => $article->id])}}">{{$article->title}}</a>
+                    <h2>
+                        <a class="text-lg hover:text-blue-300" href="{{action([ArticleController::class, 'show'], ['article' => $article->id])}}">{{$article->title}}</a>
                     </h2>
                     <div class="flex gap-2 text-gray-400 text-sm">
                         <div class="flex items-center gap-0.5">
