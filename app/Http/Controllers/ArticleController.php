@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -24,7 +26,7 @@ class ArticleController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create():View
     {
         return view('articles.create');
     }
@@ -32,14 +34,14 @@ class ArticleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request):RedirectResponse
     {
         $validated = $request->validate([
            'title' => 'required|min:5',
         ]);
 
         $article = new Article($validated);
-//        $article->title = $request->input('title');
+        $article->author = 'Benjin';
         $article->save();
         return redirect(action([MainController::class, 'home']));
     }
@@ -47,7 +49,7 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Article $article)
+    public function show(Article $article): View
     {
         return view('articles.show', [
             'article' => $article,
